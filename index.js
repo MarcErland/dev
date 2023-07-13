@@ -2,11 +2,13 @@ const express = require("express");
 const { Configuration, OpenAIApi } = require("openai");
 const dotenv = require("dotenv");
 const cors = require("cors");
+const bodyParser = require("body-parser"); // Add this line
 
 // Load environment variables from .env file
 dotenv.config();
 
 const app = express();
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public")); // Assuming your index.html is in the "public" directory
 
