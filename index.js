@@ -21,9 +21,7 @@ const languageMap = {
   // Add more language codes and their corresponding names as needed
 };
 
-app.use(cors({
-  origin: "https://photivo.se/DEV/context/index.html" // Replace YOUR_CLIENT_PORT with the port number of your client application
-}));
+app.use(cors());
 
 app.post("/translate", async (req, res) => {
   try {
