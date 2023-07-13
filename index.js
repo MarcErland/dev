@@ -21,7 +21,9 @@ const languageMap = {
   // Add more language codes and their corresponding names as needed
 };
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://photivo.se' // Replace with your client's origin URL
+}));
 
 app.post("/translate", async (req, res) => {
   try {
