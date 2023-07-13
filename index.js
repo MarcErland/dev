@@ -31,8 +31,8 @@ app.post("/translate", async (req, res) => {
     console.log("Received request:", { originalLanguage, desiredLanguage, word });
     
     // Map language codes to language names
-    originalLanguage = languageMap[originalLanguage] || originalLanguage;
-    desiredLanguage = languageMap[desiredLanguage] || desiredLanguage;
+    //originalLanguage = languageMap[originalLanguage] || originalLanguage;
+    //desiredLanguage = languageMap[desiredLanguage] || desiredLanguage;
     
     const prompt = `The word \n\n${word}\n\n is in ${originalLanguage}. Put it in a 4-8 word sentence for context, then translate that sentence into ${desiredLanguage}. Show the sentence in both languages, with ${originalLanguage} first. Separate them with a comma. `;
 
