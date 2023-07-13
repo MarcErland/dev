@@ -26,6 +26,7 @@ app.use(cors());
 app.post("/translate", async (req, res) => {
   try {
     let { originalLanguage, desiredLanguage, word } = req.body;
+    console.log("Received request:", { originalLanguage, desiredLanguage, word });
     
     // Map language codes to language names
     originalLanguage = languageMap[originalLanguage] || originalLanguage;
