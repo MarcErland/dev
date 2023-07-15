@@ -36,7 +36,7 @@ app.post("/translate", async (req, res) => {
     originalLanguage = languageMap[originalLanguage] || originalLanguage;
     desiredLanguage = languageMap[desiredLanguage] || desiredLanguage;
     
-    const prompt = `The word \n\n${word}\n\n is in ${originalLanguage}. Put it in a 4-8 word sentence for context, then translate that sentence into ${desiredLanguage}. Show the sentence in both languages, with ${originalLanguage} first. Separate them with a comma. `;
+    const prompt = `Translate the word "${word}" from ${originalLanguage} to ${desiredLanguage}. The word "${word}" in ${originalLanguage} can be used in the following sentence: "${word} sentence in ${originalLanguage}." Provide the translation of the sentence in both ${originalLanguage} and ${desiredLanguage}, separated by a comma.`;
 
     const response = await openai.createCompletion({
       model: "text-davinci-003",
